@@ -61,7 +61,7 @@ namespace Botwin.Tests
     {
         public bool CanHandle(IList<MediaTypeHeaderValue> accept)
         {
-            return accept.Any(x => x.MediaType.IndexOf("foo/bar", StringComparison.OrdinalIgnoreCase) >= 0);
+            return accept.Any(x => x.MediaType.Value.IndexOf("foo/bar", StringComparison.OrdinalIgnoreCase) >= 0);
         }
 
         public async Task Handle(HttpRequest req, HttpResponse res, object model)
